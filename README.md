@@ -68,3 +68,9 @@ This directory contains your Vuex store files. Creating a file in this directory
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 # githubBlog
+
+# Recommend Article 
+
+## Axios + nuxt.js : ssr, seo
+
+https://www.smashingmagazine.com/2020/05/getting-started-axios-nuxt/

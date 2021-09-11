@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ result }}
+    {{ github }}
   </div>
 </template>
 
@@ -8,22 +8,23 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  // async asyncData({ $axios }) {
+  //   const { data } = await $axios.get('/leetcode/contents/')
+  //   return { github: data }
+  // },
   data() {
     return {
-      result: '',
+      github: '',
     }
   },
-  created() {
-    this.sayHi('10')
-    this.fetchSomething()
+  created() {},
+  mounted() {
+    this.getGithub()
   },
   methods: {
-    sayHi(someone: string) {
-      this.result = 'hello ' + someone
-    },
-    async fetchSomething() {
-      const ip = await this.$axios.$get('http://icanhazip.com')
-      console.log(ip)
+    async getGithub() {
+      const res = await this.$store.dispatch('getLeetcodeRepositroy')
+      this.github = res.data
     },
   },
 })
